@@ -1,0 +1,9 @@
+{
+	"name": "Wines",
+	"version": "1.0.0",
+	"dependencies": {
+		"express": ">=2.0.0",
+		"redis": "~0.7",
+		"ejs": "~0.7.1"
+	}
+}
