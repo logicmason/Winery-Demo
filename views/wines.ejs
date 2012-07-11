@@ -1,11 +1,12 @@
 <h1>Wine List</h1>
-<ul>
-	<% wines.forEach(function(wine){ %>
-		<li>Name: <%= wine.name %></li>
-		<li>Grapes: <%= wine.grapes %></li>
-		<li>Country: <%= wine.country %></li>
-		<li>Region: <%= wine.region %></li>
-		<li>Year: <%= wine.year %></li>
-		<li>Description: <%= wine.description %></li>
-	<% }); %>
-</ul>
+<% wines.forEach(function(wine){ %>
+	<% wine = JSON.parse(wine) %>
+	<ul>
+	<h2><%= wine.name %></h2>
+	<li>Grapes: <%= wine.grapes %></li>
+	<li>Country: <%= wine.country %></li>
+	<li>Region: <%= wine.region %></li>
+	<li>Year: <%= wine.year %></li>
+	<li>Description: <%= wine.description %></li>
+	</ul>
+<% }); %>
