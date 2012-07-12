@@ -17,12 +17,9 @@ var wines = [{"name": "Midland Vinyards Red",
 							"description": "very smooth"}];
 
 
-// There must be a better way to do this than stringifying and parsingthe entire JSON object!!!
 app.get('/api/wines', function(req, response) {
 	rwines = redisClient.lrange('wines',0,-1,function(err, wines){
-		//wines = JSON.parse(wines);
-		console.log("Type: "+typeof(wines[0]));
-		console.log(wines[0].name);
+		wines = wines.map(JSON.parse);
 		response.render('wines.ejs', {wines: wines});
 	});
 });
